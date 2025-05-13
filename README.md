@@ -1,51 +1,23 @@
-# Task Tracker – Spring Boot Learning Project
+# 🧩 Task Tracker API – Learning Project
 
-A simple REST API to manage tasks. This project is built with Java, Spring Boot, and follows best practices for learning full-stack backend development.
-
----
-
-## 🧠 Key Spring Concepts (with annotations)
-
-### 📍 Model Layer (`Task.java`)
-- `@Entity`: Maps the class to a DB table.
-- `@Id`: Marks the primary key.
-- `@GeneratedValue`: Auto-generates ID.
-- Uses `LocalDate` for date-only values.
+This is a simple RESTful API for managing tasks (ToDo-style) built with **Java**, **Spring Boot**, and eventually **Docker** and **PostgreSQL**.  
+It is designed to help frontend developers transition into backend development by applying concepts in a hands-on way.
 
 ---
 
-### 📍 Repository Layer (`TaskRepository.java`)
-- Extends `JpaRepository<Task, Long>` to get:
-    - `findAll()`, `findById()`, `save()`, `deleteById()`, etc.
-- `@Repository`: Marks it as a Spring Data component (optional if extending JpaRepository).
+## 📚 Key Features
+
+- Create, update, retrieve, and delete tasks.
+- REST API using Spring Boot.
+- Layered architecture: Controller → Service → Repository → Model.
+- Learn-by-doing structure: heavily commented and well-documented.
+- Next steps: Dockerize app and add PostgreSQL.
 
 ---
 
-### 📍 Service Layer (`TaskService.java`)
-- `@Service`: Marks it as a business logic component.
-- Uses **constructor injection** with `@Autowired`.
-- Uses `Optional<Task>` for null-safe queries.
+## 🧠 Architecture Overview
 
----
-
-### 📍 Controller Layer (`TaskController.java`)
-- `@RestController`: Combines `@Controller` + `@ResponseBody`.
-- `@RequestMapping("/api/tasks")`: Base path for routes.
-- `@GetMapping`, `@PostMapping`, etc.: Maps HTTP methods.
-- `@PathVariable`: Injects dynamic values from URL.
-- `@RequestBody`: Converts JSON to Java objects.
-- `ResponseEntity`: Allows flexible HTTP responses (status + body).
-
----
-
-## 💡 Learning Goals
-- Understand layered architecture (Controller → Service → Repository → DB).
-- Practice Java basics (constructors, getters/setters, types).
-- Learn Spring Boot and REST APIs.
-- Prepare for integration with Docker and PostgreSQL.
-
----
-
-## 🚀 Run the Project
-_TBD: Add details once PostgreSQL or H2 is configured._
-
+```plaintext
+Client
+  ↓
+Controller → Service → Repository → Database
