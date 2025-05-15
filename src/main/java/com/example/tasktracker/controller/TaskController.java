@@ -12,6 +12,7 @@ import java.util.List;
  * Controller that handles HTTP requests for Task-related actions.
  * It delegates business logic to the TaskService.
  */
+@CrossOrigin(origins = "*")
 @RestController // 🔹 Tells Spring this class will handle REST API requests (JSON in, JSON out)
 @RequestMapping("/api/tasks") // 🔹 Base URL path for all task-related endpoints
 public class TaskController {
